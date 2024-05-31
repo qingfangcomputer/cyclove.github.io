@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务暂时不可用 - 青方计算机科技有限公司</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> <!-- 引入Animate.css动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> <!-- 引入FontAwesome图标库 -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed; /* 背景图片 */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .error-page {
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .error-page::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            z-index: -1;
+            animation: shimmer 2s infinite; /* 添加渐变动画 */
+        }
+        @keyframes shimmer {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            animation: bounceInDown 1s; /* 添加动画效果 */
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            animation: fadeIn 1s; /* 添加动画效果 */
+        }
+        .contact-info {
+            font-size: 0.9em;
+            color: #777;
+        }
+        .contact-info a {
+            color: #3498db;
+        }
+        .robot-icon {
+            font-size: 5em;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite; /* 添加动画效果 */
+        }
+        .refresh-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .refresh-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <i class="fas fa-robot robot-icon animate__animated animate__pulse"></i> <!-- 使用FontAwesome图标库中的机器人图标，并添加动画 -->
+        <h1 class="animate__animated animate__bounceInDown">哎呀！服务暂时不可用</h1>
+        <p class="animate__animated animate__fadeIn">我们的小机器人正在努力修复服务器问题。请稍后再来，我们会很快恢复正常。</p>
+        <p class="animate__animated animate__fadeIn">如果您需要紧急帮助，请通过以下方式联系我们：</p>
+        <div class="contact-info">
+            <p><a href="mailto:info@qingfangcomputer.top">邮箱：info@qingfangcomputer.top</a></p>
+            <p>电话：+86 123 4567 8900</p>
+        </div>
+        <button class="refresh-button" onclick="location.reload();">点击刷新</button> <!-- 添加刷新按钮 -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script> <!-- 引入FontAwesome图标库的JS文件 -->
+</body>
+</html>
