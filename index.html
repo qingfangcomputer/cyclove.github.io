@@ -165,6 +165,43 @@ body {
         <h5 id="site_runtime"></h5>
     </blockquote>
 
+<body>
+  <h2>距离我们相爱100天还有：</h2>
+    <h1 class="text-center" id="countdown"></h1>
+    <h1 class="text-center" id="message" style="display: none;">❤我们已经相爱100天啦❤</h1>
+
+    <script>
+        // 设置倒计时的结束时间
+        var targetDate = new Date("Friday, 23-Aug-24 18:00:01 CST").getTime();
+        
+        // 每隔一秒执行一次更新倒计时的函数
+        var countdown = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = targetDate - now;
+            
+            // 计算天、小时、分钟和秒
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // 格式化输出
+            var countdownStr = days + "天 " + hours + "小时 "
+                               + minutes + "分钟 " + seconds + "秒";
+            
+            // 显示倒计时
+            document.getElementById("countdown").innerHTML = countdownStr;
+            
+            // 当倒计时结束时显示文字并清除定时器
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            }
+        }, 1000);
+    </script>
+</body>
+
 <div class="p-5 text-center ">
     
 	<p class="h6">❤ <a href="https://www.zzaiyan.com" target="_blank">玉诚</a> & <a href="https://www.naji233.cn" target="_blank">祁婷</a> ❤</p>
@@ -216,6 +253,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-</body>
+
 
 </html>
